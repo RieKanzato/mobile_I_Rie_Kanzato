@@ -1,15 +1,26 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ImageComponent, StyleSheet, View } from "react-native";
 
-export default function index() {
+import ImageViewer from '../components/ImageViewer.js';
+import FotoPerfil from '../components/FotoPerfil.js';
+
+const albumFoto = require('../assets/images/strobo.png');
+const fotoPerfil = require('../assets/images/userIcon.png');
+
+
+export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={{ color: '#fff' }}>
-        Open up App.js to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
+      <View style={styles.fotoContainer}>
+        <FotoPerfil fotoPerfilSource={fotoPerfil}/>
+      </View>
+      <View style={styles.imageContainer}>
+        <ImageViewer albumFotoSource={albumFoto}/>
+      </View>
+      <StatusBar style='auto'/>
     </View>
   );
+      
 }
 
 const styles = StyleSheet.create({
@@ -19,4 +30,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-})
+  imageContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+  },
+  fotoContainer: {
+    paddingRight: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 18,
+  }
+});
