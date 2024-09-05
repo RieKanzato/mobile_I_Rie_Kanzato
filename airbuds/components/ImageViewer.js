@@ -8,7 +8,7 @@ export default function ImageViewer({ albumFotoSource }) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 320,
-    height: 320,
+    width: 220,
+    height: 220,
   },
 });
