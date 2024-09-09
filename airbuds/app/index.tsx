@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { ImageComponent, StyleSheet, View, TextInputChangeEventData } from "react-native";
+import { ImageComponent, StyleSheet, View, Text } from "react-native";
+
 
 import Button from '../components/butao.js'
 import ImageViewer from '../components/ImageViewer.js';
@@ -13,20 +14,23 @@ export default function Index() {
   return (
     <View style={styles.container}>
     <View style={styles.centerContainer}>
-    
       <View style={styles.fotoContainer}>
         <FotoPerfil fotoPerfilSource={fotoPerfil}/>
-        <View>
-        <text style={{color: '#fff'}}>User12345</text>
       </View>
+      <View>
+      <Text style={{color: '#fff'}}>
+          <Text> User12345 </Text>
+      </Text>
       </View>
       <View style={styles.imageContainer}>
-        <ImageViewer albumFotoSource={albumFoto}/>
-      </View>
+        <ImageViewer albumFotoSource={albumFoto}/>  
+      </View> 
+         <Text style={{color: '#fff'}}> 
+          <Text> Fukakoryoku </Text>
+        </Text>
       <View style={styles.buttonContainer}>
         <Button label= 'play on'/>
       </View>
-   
       <StatusBar style='auto'/>  
     </View>
     <View style={styles.barra}>A</View>
@@ -51,10 +55,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 10,
+    marginVertical: 14,
   },
   fotoContainer: {
-    paddingRight: 9,
+    paddingRight: 1,
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 20,
