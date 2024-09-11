@@ -1,13 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Pressable, Image } from "react-native";
 
 import Button from '../components/butao.js';
 import ImageViewer from '../components/ImageViewer.js';
 import FotoPerfil from '../components/FotoPerfil.js';
 
+
 const albumFoto = require('../assets/images/strobo.png');
 const fotoPerfil = require('../assets/images/userIcon.png');
-
+const home = require('../assets/images/home.png');
 
 export default function Index() {
   return (
@@ -32,8 +33,10 @@ export default function Index() {
         <Button label= 'play on'/>
       </View>
       <StatusBar style='auto'/>  
+    </View> 
+    <View style={styles.barra}>
+      <Pressable><Image source={home} style={styles.home} /> </Pressable>
     </View>
-    <View style={styles.barra}></View>
     </View>
     
   );
@@ -66,9 +69,12 @@ const styles = StyleSheet.create({
   barra: {
     backgroundColor: 'black',
     width: '100%',
-    height: 90,
+    height: 65,
   },
   buttonContainer:{
     height: 10,
   },
+  home:{
+
+  }
 });
