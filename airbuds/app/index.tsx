@@ -1,8 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import { ImageComponent, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
-
-import Button from '../components/butao.js'
+import Button from '../components/butao.js';
 import ImageViewer from '../components/ImageViewer.js';
 import FotoPerfil from '../components/FotoPerfil.js';
 
@@ -16,28 +15,28 @@ export default function Index() {
     <View style={styles.centerContainer}>
       <View style={styles.fotoContainer}>
         <FotoPerfil fotoPerfilSource={fotoPerfil}/>
-      </View>
-      <View>
-      <Text style={{color: '#fff'}}>
+        <Text style={{color: '#fff', fontSize: 15}}>
           <Text> User12345 </Text>
       </Text>
-      </View>
+      </View> 
       <View style={styles.imageContainer}>
         <ImageViewer albumFotoSource={albumFoto}/>  
       </View> 
-         <Text style={{color: '#fff'}}> 
+         <Text style={{color: '#fff', fontSize: 25}}> 
           <Text> Fukakoryoku </Text>
+        </Text> 
+        <Text style={{color: '#fff', fontSize: 15}}> 
+          <Text> Vaundy </Text>
         </Text>
       <View style={styles.buttonContainer}>
         <Button label= 'play on'/>
       </View>
       <StatusBar style='auto'/>  
     </View>
-    <View style={styles.barra}>A</View>
+    <View style={styles.barra}></View>
     </View>
     
   );
-      
 }
 
 const styles = StyleSheet.create({
@@ -55,7 +54,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 14,
+    marginVertical: 10,
+    paddingLeft: 3,
   },
   fotoContainer: {
     paddingRight: 1,
@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
     height: 90,
   },
   buttonContainer:{
-    height: 20,
+    height: 10,
   },
 });
