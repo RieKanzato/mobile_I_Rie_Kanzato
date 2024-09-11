@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     fotoContainer: {
-        paddingRight: 100,
+        justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 20,
+        marginVertical: 40,
       }
 });

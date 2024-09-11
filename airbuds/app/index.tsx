@@ -11,6 +11,7 @@ const albumFoto = require('../assets/images/strobo.png');
 const fotoPerfil = require('../assets/images/userIcon.png');
 const home = require('../assets/images/home.png');
 const friends = require('../assets/images/friends.png');
+const perfil = require('../assets/images/strobo.png');
 
 export default function Index() {
   return (
@@ -39,11 +40,14 @@ export default function Index() {
         <View style={styles.barra}>
           <Pressable onPress={() => {return <Redirect href="../friends.tsx" /> } }>
           <Image source={friends} style={styles.friends} />
-          </Pressable>
-          {/*<Pressable onPress={() => {return <Redirect href="../index.tsx" /> } }> */}
+          </Pressable> 
+          <Pressable onPress={() => {return <Redirect href="../perfil.tsx" /> } }> 
+          <Image source={perfil} style={styles.perfil} />
+          </Pressable> 
+          <Pressable onPress={() => {return <Redirect href="../index.tsx" /> } }> 
           <Image source={home} style={styles.home} />
-          {/* </Pressable> */}
-          
+          </Pressable> 
+        
       </View>
     </View>
     
@@ -91,6 +95,13 @@ const styles = StyleSheet.create({
   friends:{
     position: 'absolute',
     marginLeft: 90,
+    width: 40,
+    height: 44,
+    marginVertical: 11,
+  },
+  perfil:{
+    position: 'absolute',
+    marginLeft: 350,
     width: 40,
     height: 44,
     marginVertical: 11,
