@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text, Pressable, Image } from "react-native";
-import { Redirect } from 'expo-router';
+import { Link } from "expo-router";
 
 import Button from '../components/butao.js';
 import ImageViewer from '../components/ImageViewer.js';
@@ -11,7 +11,7 @@ const albumFoto = require('../assets/images/strobo.png');
 const fotoPerfil = require('../assets/images/userIcon.png');
 const home = require('../assets/images/home.png');
 const friends = require('../assets/images/friends.png');
-const perfil = require('../assets/images/strobo.png');
+const perfil = require('../assets/images/perfil.png');
 
 export default function Index() {
   return (
@@ -38,16 +38,30 @@ export default function Index() {
             <StatusBar style='auto'/>  
           </View> 
         <View style={styles.barra}>
-          <Pressable onPress={() => {return <Redirect href="../friends.tsx" /> } }>
+          <View>
+          <Link href={'../nots/index'}>
+          <Pressable onPress={() => {  } }>
           <Image source={friends} style={styles.friends} />
           </Pressable> 
-          <Pressable onPress={() => {return <Redirect href="../perfil.tsx" /> } }> 
+          </Link>
+          </View>
+          
+          <View>
+          <Link href={'../account/perfil'}>
+          <Pressable onPress={() => {  } }> 
           <Image source={perfil} style={styles.perfil} />
           </Pressable> 
-          <Pressable onPress={() => {return <Redirect href="../index.tsx" /> } }> 
+          </Link>
+          </View>
+
+          <View>
+          <Link href={'../index'}>
+          <Pressable onPress={() => {  } }> 
           <Image source={home} style={styles.home} />
           </Pressable> 
-        
+          </Link>
+          </View>
+
       </View>
     </View>
     
@@ -89,21 +103,23 @@ const styles = StyleSheet.create({
   home:{
     paddingRight: 30,
     marginVertical: 5,
-    width: 50,
-    height: 50,
+    justifyContent: 'center',
+    width: 20,
+    height: 20,
   },
   friends:{
     position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginLeft: 90,
-    width: 40,
-    height: 44,
+    width: 20,
+    height: 24,
     marginVertical: 11,
   },
   perfil:{
     position: 'absolute',
-    marginLeft: 350,
-    width: 40,
-    height: 44,
-    marginVertical: 11,
+    marginLeft: 240,
+    width: 30,
+    height: 34,
   }
 });
