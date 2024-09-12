@@ -38,23 +38,24 @@ export default function Index() {
             <StatusBar style='auto'/>  
           </View> 
         <View style={styles.barra}>
-          <View>
+        
+          <View style= {{width: 30, marginLeft: 61, marginTop: -20 }}>
           <Link href={'../nots/index'}>
           <Pressable onPress={() => {  } }>
           <Image source={friends} style={styles.friends} />
           </Pressable> 
           </Link>
           </View>
-          
-          <View>
+
+          <View style={{width: 30, marginTop: 16}}>
           <Link href={'../account/perfil'}>
           <Pressable onPress={() => {  } }> 
           <Image source={perfil} style={styles.perfil} />
           </Pressable> 
           </Link>
           </View>
-
-          <View>
+          
+          <View style={{width: 30, marginRight: 50, marginBottom: 40, alignContent: 'space-around'}}>
           <Link href={'../index'}>
           <Pressable onPress={() => {  } }> 
           <Image source={home} style={styles.home} />
@@ -101,25 +102,27 @@ const styles = StyleSheet.create({
     height: 10,
   },
   home:{
-    paddingRight: 30,
-    marginVertical: 5,
-    justifyContent: 'center',
-    width: 20,
-    height: 20,
+    marginBottom: 400,
+    paddingRight: 60,
+    marginVertical: -27,
+    width: 40,
+    height: 40,
   },
   friends:{
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 90,
-    width: 20,
-    height: 24,
+    width: 50,
+    height: 50,
     marginVertical: 11,
   },
   perfil:{
     position: 'absolute',
     marginLeft: 240,
-    width: 30,
-    height: 34,
+    width: 45,
+    height: 45,
+    marginVertical: -20,
+    marginLeft: 310
   }
 });

@@ -15,14 +15,15 @@ export default function friends (){
         <View style={styles.container}>
             <View style={styles.centerContainer}>
             <PerfilFoto perfilFotoSource={perfilFoto}/>
-            <View style={styles.textContainer}>
-            <Text style={{color: '#fff', fontSize: 25 }}>
-              <Text> User12345 </Text>
+            
+            <Text style={{color: '#fff', fontSize: 25, margin: 0 }}>
+              <Text> User12345 </Text><br/>
+              <Text> @User12345</Text>
             </Text>  
-            <Text style={{color: '#fff', fontSize: 15}}>
-              <Text> @User12345 </Text>
-            </Text>  
-            </View>
+            {/*<Text style={{color: '#fff', fontSize: 15}}>
+             
+            </Text>*/}  
+            
             <View style={styles.musicaContainer}>
            
             <Text style={{color: '#fff', fontSize: 10, marginRight: 168, marginVertical: 40}}>
