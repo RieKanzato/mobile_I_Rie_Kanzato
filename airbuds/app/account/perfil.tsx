@@ -2,95 +2,109 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text, Pressable, Image } from "react-native";
 import { Link } from "expo-router";
 
-
 import PerfilFoto from '../../components/Perfil.js';
 
 const perfilFoto = require('../../assets/images/userIcon.png');
 const friend = require('../../assets/images/friends.png');
 const albumFoto = require('../../assets/images/strobo.png');
 
-
-export default function friends (){
-    return(
+export default function Friends() {
+    return (
         <View style={styles.container}>
-            <View style={styles.centerContainer}>
-            <PerfilFoto perfilFotoSource={perfilFoto}/>
-            
-            <Text style={{color: '#fff', fontSize: 25, margin: 0 }}>
-              <Text> User12345 </Text><br/>
-              <Text> @User12345</Text>
-            </Text>  
-            {/*<Text style={{color: '#fff', fontSize: 15}}>
-             
-            </Text>*/}  
-            
-            <View style={styles.musicaContainer}>
-           
-            <Text style={{color: '#fff', fontSize: 10, marginRight: 168, marginVertical: 40}}>
-              <Text> Recently played </Text>
-              </Text>
+            <StatusBar style='light' />
+            <View style={styles.header}>
+                <PerfilFoto perfilFotoSource={perfilFoto} />
+                <Text style={styles.username}>User12345</Text>
+                <Text style={styles.handle}>@User12345</Text>
             </View>
-            <Image source={albumFoto} style={styles.musica} />
+            <View style={styles.recentlyPlayedContainer}>
+                <Text style={styles.recentlyPlayedText}>Recently Played</Text>
+                <Image source={albumFoto} style={styles.albumArt} />
             </View>
             <View style={styles.favoriteContainer}>
-
+                <Text style={styles.favoriteText}>Favorite Tracks</Text>
             </View>
+            <Text style={styles.onRepeatText}>On Repeat</Text>
             <View style={styles.barra}>
-            <Link href={'./nots/index'}>
-            <Pressable onPress={() => {  } }>
-            <Image source={friend} style={styles.friend} />
-            </Pressable>
-            </Link>
-            <View>
-            <StatusBar style='auto'/>  
-            </View>
+                <Link href={'./nots/index'}>
+                    <Pressable>
+                        <Image source={friend} style={styles.friendIcon} />
+                    </Pressable>
+                </Link>
             </View>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
-      width: '100%',
-      height: '100%',
+        flex: 1,
+        backgroundColor: '#141414', // Keep original background color
+        alignItems: 'center',
+        padding: 20,
     },
-    centerContainer: {
-      flex: 1,
-      backgroundColor: '#141414',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-     margin: 0,
+    header: {
+        alignItems: 'center',
+        marginVertical: 20,
     },
-    textContainer:{
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      marginTop: 0,
+    username: {
+        color: '#fff',
+        fontSize: 26,
+        fontWeight: 'bold',
+        marginVertical: 5,
     },
-    musicaContainer:{
-
+    handle: {
+        color: '#aaa',
+        fontSize: 16,
     },
-    musica:{
-      height: 40,
-      width: 40,
-      marginRight: 190,
+    recentlyPlayedContainer: {
+        alignItems: 'center',
+        marginVertical: 20,
     },
-    favoriteContainer:{
-      backgroundColor: 'gray',
-      width: '90%',
-      height: 50,
-      borderRadius: 60,
-      alignItems: 'center'
+    recentlyPlayedText: {
+        color: '#fff',
+        fontSize: 20,
+        marginBottom: 10,
+        fontWeight: '600',
     },
-    barra:{
-      backgroundColor: 'black',
-      width: '100%',
-      height: 65,
+    albumArt: {
+        height: 120,
+        width: 120,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: '#fff',
     },
-    friend:{
-      position: 'absolute',
-      marginLeft: 90,
-      width: 20,
-      height: 24,
-      marginVertical: 11,
-    }
+    favoriteContainer: {
+        backgroundColor: '#A8E1D8', // Pastel green
+        width: '90%',
+        height: 70,
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 10,
+        elevation: 5, // Add shadow effect
+    },
+    favoriteText: {
+        color: '#2E8B57', // Darker green
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    onRepeatText: {
+        color: '#6CA0F5', // Pastel blue
+        fontSize: 28,
+        fontWeight: 'bold',
+        marginVertical: 10,
+    },
+    barra: {
+        backgroundColor: '#000',
+        width: '100%',
+        height: 65,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    friendIcon: {
+        width: 24,
+        height: 24,
+    },
 });

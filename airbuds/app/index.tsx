@@ -6,7 +6,6 @@ import Button from '../components/butao.js';
 import ImageViewer from '../components/ImageViewer.js';
 import FotoPerfil from '../components/FotoPerfil.js';
 
-
 const albumFoto = require('../assets/images/strobo.png');
 const fotoPerfil = require('../assets/images/userIcon.png');
 const home = require('../assets/images/home.png');
@@ -17,112 +16,98 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.centerContainer}>
-          <View style={styles.fotoContainer}>
-              <FotoPerfil fotoPerfilSource={fotoPerfil}/>
-              <Text style={{color: '#fff', fontSize: 15}}>
-                <Text> User12345 </Text>
-            </Text>
-            </View> 
-            <View style={styles.imageContainer}>
-              <ImageViewer albumFotoSource={albumFoto}/>  
-            </View> 
-              <Text style={{color: '#fff', fontSize: 25}}> 
-                <Text> Fukakoryoku </Text>
-              </Text> 
-              <Text style={{color: '#fff', fontSize: 15}}> 
-                <Text> Vaundy </Text>
-              </Text>
-            <View style={styles.buttonContainer}>
-              <Button label= 'play on'/>
-            </View>
-            <StatusBar style='auto'/>  
-          </View> 
-        <View style={styles.barra}>
-        
-          <View style= {{width: 30, marginLeft: 61, marginTop: -20 }}>
-          <Link href={'../nots/index'}>
-          <Pressable onPress={() => {  } }>
-          <Image source={friends} style={styles.friends} />
-          </Pressable> 
+        <View style={styles.fotoContainer}>
+          <FotoPerfil fotoPerfilSource={fotoPerfil} />
+          <Text style={styles.username}>User12345</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <ImageViewer albumFotoSource={albumFoto} />
+        </View>
+        <Text style={styles.title}>Fukakoryoku</Text>
+        <Text style={styles.artist}>Vaundy</Text>
+        <View style={styles.buttonContainer}>
+          <Button label='play on' />
+        </View>
+        <StatusBar style='auto' />
+      </View>
+      <View style={styles.barra}>
+        <View style={styles.iconContainer}>
+          <Link href={'../Friends/amigos'}>
+            <Pressable>
+              <Image source={friends} style={styles.icon} />
+            </Pressable>
           </Link>
-          </View>
-
-          <View style={{width: 30, marginTop: 16}}>
+        </View>
+        <View style={styles.iconContainer}>
           <Link href={'../account/perfil'}>
-          <Pressable onPress={() => {  } }> 
-          <Image source={perfil} style={styles.perfil} />
-          </Pressable> 
+            <Pressable>
+              <Image source={perfil} style={styles.icon} />
+            </Pressable>
           </Link>
-          </View>
-          
-          <View style={{width: 30, marginRight: 50, marginBottom: 40, alignContent: 'space-around'}}>
-          <Link href={'../index'}>
-          <Pressable onPress={() => {  } }> 
-          <Image source={home} style={styles.home} />
-          </Pressable> 
+        </View>
+        <View style={styles.iconContainer}>
+          <Link href={'../nots/index'}>
+            <Pressable>
+              <Image source={home} style={styles.icon} />
+            </Pressable>
           </Link>
-          </View>
-
+        </View>
       </View>
     </View>
-    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
+    backgroundColor: '#141414',
   },
   centerContainer: {
     flex: 1,
-    backgroundColor: '#141414',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 16,
   },
   imageContainer: {
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 10,
-    paddingLeft: 3,
   },
   fotoContainer: {
-    paddingRight: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     marginVertical: 20,
+  },
+  username: {
+    color: '#fff',
+    fontSize: 15,
+  },
+  title: {
+    color: '#fff',
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginVertical: 5,
+  },
+  artist: {
+    color: '#fff',
+    fontSize: 15,
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    marginVertical: 10,
   },
   barra: {
     backgroundColor: 'black',
-    width: '100%',
     height: 65,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
-  buttonContainer:{
-    height: 10,
+  iconContainer: {
+    width: 40,
+    alignItems: 'center',
   },
-  home:{
-    marginBottom: 400,
-    paddingRight: 60,
-    marginVertical: -27,
+  icon: {
     width: 40,
     height: 40,
   },
-  friends:{
-    position: 'absolute',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 90,
-    width: 50,
-    height: 50,
-    marginVertical: 11,
-  },
-  perfil:{
-    position: 'absolute',
-    marginLeft: 240,
-    width: 45,
-    height: 45,
-    marginVertical: -20,
-    marginLeft: 310
-  }
 });
